@@ -1,0 +1,22 @@
+{
+  "name": "edn2json",
+  "version": "1.0.0",
+  "description": "Convert OpenKIM edn json to conventional json.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "main": "convert.js"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jl2922/edn2json.git"
+  },
+  "author": "Junhao Li",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jl2922/edn2json/issues"
+  },
+  "homepage": "https://github.com/jl2922/edn2json#readme",
+  "dependencies": {
+    "pegjs": "^0.10.0"
+  }
+}
