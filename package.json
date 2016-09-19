@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "main": "convert.js"
+  "main": "convert.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jl2922/edn2json.git"
