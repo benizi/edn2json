@@ -1,6 +1,8 @@
 # edn2json
 Convert OpenKIM edn json to conventional json (object).
 
+[![Build Status](https://travis-ci.org/jl2922/edn2json.svg?branch=master)](https://travis-ci.org/jl2922/edn2json)
+
 ## Installation
 
 ```
