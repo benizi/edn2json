@@ -5,7 +5,7 @@ Convert OpenKIM edn json to conventional json (object).
 
 ## Installation
 
-```
+```bash
 sudo npm install -g edn2json # As CLI.
 sudo npm install edn2json # For NodeJS.
 ```
@@ -13,12 +13,12 @@ sudo npm install edn2json # For NodeJS.
 ## Usage
 
 To use as CLI:
-```
+```bash
 edn2json [path-to-edn]
 ```
 
 To use in NodeJS:
-```
+```javascript
 var fs = require('fs');
 var parser = require('edn2json');
 
