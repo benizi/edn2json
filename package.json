@@ -1,6 +1,6 @@
 {
   "name": "edn2json",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Convert OpenKIM edn json to conventional json.",
   "scripts": {
     "test": "jasmine"
