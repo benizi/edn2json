@@ -1,11 +1,14 @@
 {
   "name": "edn2json",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Convert OpenKIM edn json to conventional json.",
   "scripts": {
     "test": "jasmine"
   },
   "main": "convert.js",
+  "bin": {
+    "edn2json": "./edn2json.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jl2922/edn2json.git"
@@ -17,6 +20,7 @@
   },
   "homepage": "https://github.com/jl2922/edn2json#readme",
   "dependencies": {
+    "command-line-args": "^3.0.1",
     "pegjs": "^0.10.0"
   }
 }
