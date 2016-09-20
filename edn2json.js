@@ -10,6 +10,10 @@ const options = commandLineArgs([{
   defaultOption: true,
   name: 'inputFile',
   type: String
+}, {
+  alias: 'o',
+  name: 'outputFile',
+  type: String
 }]);
 
 const loadFile = (filename) => {
@@ -19,15 +23,7 @@ const loadFile = (filename) => {
 
 const parser = peg.generate(loadFile('convert.pegjs'));
 
-const compile = (inputFile) => {
-  var outputFile = ((inputFile) => {
-    var inputPath = path.parse(inputFile);
-    return path.format({
-      dir: inputPath.dir,
-      base: inputPath.name + '.json'
-    });
-  })(inputFile);
-
+const compile = (inputFile, outputFile) => {
   var edn = fs.readFileSync(inputFile, 'utf8');
   var data = parser.parse(edn);
   var json = JSON.stringify(data, null, 2);
@@ -38,9 +34,18 @@ const compile = (inputFile) => {
 
 (() => {
   var inputFile = options['inputFile'];
+  var defaultOutputFile = (() => {
+    var inputPath = path.parse(inputFile);
+    return path.format({
+      dir: inputPath.dir,
+      base: inputPath.name + '.json'
+    });
+  })();
+  var outputFile = options['outputFile'] || defaultOutputFile;
+
   var stats = fs.statSync(inputFile);
   if (stats.isFile()) {
-    compile(inputFile);
+    compile(inputFile, outputFile);
   } else {
     throw new Error('Input is not a file.');
   }

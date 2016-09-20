@@ -1,6 +1,6 @@
 {
   "name": "edn2json",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Convert EDN format to JSON format.",
   "scripts": {
     "test": "jasmine"

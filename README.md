@@ -14,9 +14,12 @@ npm install edn2json # For NodeJS.
 
 To use as CLI:
 ```bash
-edn2json [path-to-edn]
+edn2json [path-to-edn-input]
 ```
-It will output JSON with the same filename as the EDN file but with '.json' extension.
+By default, it will output JSON with the same filename as the EDN file but with '.json' extension, which can be customized by:
+```bash
+edn2json [path-to-edn-input] -o [path-to-json-output]
+```
 
 To use in NodeJS:
 ```javascript
