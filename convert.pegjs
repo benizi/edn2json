@@ -34,7 +34,7 @@ Value = value:(ValueObject / ArrayValue / StringValue / NumberValue) {
   return value;
 }
 
-StringValue = "\"" string:([^\"]+) "\"" {
+StringValue = "\"" string:([^\"]*) "\"" {
   return string.join("");
 }
 
