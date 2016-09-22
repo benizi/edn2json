@@ -6,13 +6,13 @@ Convert EDN format to JSON format.
 ## Installation
 
 ```bash
-sudo npm install -g edn2json # As CLI.
-npm install edn2json # For NodeJS.
+sudo npm install -g edn2json # CLI.
+npm install edn2json # NodeJS.
 ```
 
 ## Usage
 
-To use as CLI:
+### To use as CLI
 ```bash
 edn2json [path-to-edn-input]
 ```
@@ -21,11 +21,30 @@ By default, it will output JSON with the same filename as the EDN file but with 
 edn2json [path-to-edn-input] -o [path-to-json-output]
 ```
 
-To use in NodeJS:
+### To use in NodeJS
 ```javascript
-var fs = require('fs');
-var parser = require('edn2json');
+const parser = require('edn2json');
 
-var edn = fs.readFileSync('result.edn', 'utf8');
-data = parser.parse(edn); // data is a usual JavaScript object.
+var ednString = '[{"foo" "bar"}]';
+var data = parser.parse(ednString);
+var jsonString = JSON.stringify(data); // [{"foo":"bar"}].
+```
+
+### To use in browser
+
+First install pegjs compiler and compile `convert.pegjs`:
+```bash
+sudo npm install -g pegjs
+pegjs --format globals --export-var [variable-name] -o [path-to-js-output] convert.pegjs
+```
+Then in the HTML:
+```html
+<!-- Suppose the js output is edn-parser.js and variable name is ednParser. -->
+<script src="edn-parser.js"></script>
+
+<script>
+var ednString = '[{"foo" "bar"}]';
+var data = ednParser.parse(ednString);
+var jsonString = JSON.stringify(data); // [{"foo":"bar"}].
+</script>
 ```
